@@ -1,0 +1,217 @@
+\documentclass{ctexart}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{indentfirst}
+\usepackage{graphicx}
+\pagestyle{fancy}
+\lfoot{}%这条语句可以让页码出现在下方
+\title{《抽象代数》\\ 第五次作业} 
+\author{\\姓名：姜岚曦 \ \ 学号：19375233
+		\\姓名：魏来   \ \ 学号：20374104         
+	    \\姓名：曹建钬 \ \ 学号：20375177
+        \\姓名：李璞   \ \ 学号：20376164
+        \\姓名：刘炅   \ \ 学号：21374261}
+\date{}
+\begin{document}
+\pagestyle{empty}
+\thispagestyle{empty}
+\CTEXsetup[format={\Large\bfseries}]{section}
+\maketitle
+\clearpage	
+	
+\section*{\$2.8：子群}
+1.
+解：\\
+$S_3=\{(1),(12),(23),(31),(123),(132)\}$\\
+$H_1=\{(1)\} H_2=S_3$两平凡子群.\\
+$H_3=\{(1),(12)\}$,$H_4=\{(1),(23)\}$,$H_5=\{(1),(31)\}$,$H_6=\{(1),(123),(132)\}$
+
+2.
+解：\\
+设群$G$有两个子群$H_1$、$H_2$，有$e\in H_1,e \in H_2$.故$H_1 \bigcap H_2 \neq \emptyset $.\\
+设$H_1$、$H_2$的交集中有一元素名为$a$，即$a \in H_1,a \in H_2$.\\ 
+则有$a^{-1} \in H_1, a^{-1} \in H_2$，即$a^{-1} \in H_1 \bigcap H_2$\\
+设另有一元素$b \in H_1 \bigcap H_2$. 则$ab \in H_1, ab \in H_2, b^{-1} \in H_1, b^{-1} \in H_2$ \\
+故$ab \in H_1 \bigcap H_2, b^{-1} \in H_1 \bigcap H_2$\\
+故$ H_1 \bigcap H_2$满足定理1，是$G$的子群
+
+3.
+解：\\
+$S=\{(12),(13)\}$，设生成子群$H$ \\
+则$(12)(123)=(13) \in H. \ \ \ \ (123)(12)=(23) \in H$\\
+则$(12)(23)=(123) \in H. \ \ \ \ (12)(12)=(1)$\\
+故$H=S_3$\\
+肯定会，$S_3$也是$S_3$的一个子集，生成平凡子群与$S$生成的$H$一样
+
+4.
+解：\\
+显然，循环群$G=(a)$的子群$\{e\}$也是循环群\\
+设子群$H$中有元素$a^m$.令$i$是使$a^j \in H$的最小正整数. \\
+则$H$中可写成$a^{iq+r}$的形式，其中$q$是正整数，$0 \leq r < i$\\
+则$a^{iq} \in H \Rightarrow a^r \in H$，而因为$r<i$，故$r=0$ \\
+$H=(a^i)$
+
+5.
+解：\\
+$\{[0]\}$ \ \ $\{[0],[1],\ldots,[11]\}$ \\
+$\{[0],[2],[4],[6],[8],[10]\}$\\
+$\{[0],[3],[6],[9]\}$ \ \ $\{[0],[4],[8]\}$ \ \ $\{[0],[6]\}$
+
+6.
+解：\\
+设$a$的阶是$m,a^m=e.$ \\
+则$a^{m-1}=a^{-1} \in H,H$是子群.充分性得证.\\
+必要性，由定理1，显然成立.
+
+\section*{\$2.9：子群的陪集}
+1.
+解：\\
+如果一个群$G$的阶是素数，设其为$N$.\\
+由定理2有$N=nj$，其中$n$是$G$的一个子群$H$的阶，$j$是$H$在$G$里的指数.\\
+由于$N$是素数，故$n=l$或$N$. \\
+若$n=1$，则显然$H=\{e\}$，其$j=N$.即存在$N$个$H$的右陪集.\\
+故有$H(a)=\{e,a\}$ 当$a \neq e, a\in G$时. \\
+对于每一个符合条件的$a$，均有$\{a\}$是一个群，即有$a=e$成立矛盾.故$G$中只有一个元素$e$.矛盾.\\
+故$n=N$,显然$H=G$,对于$G$中任意一个不为$e$的元$a$，$a$生成的循环子群的阶必为$N$.即有$G=(a)$.故$G$是循环群
+
+2.
+解：\\
+设群$G$的阶为$P^m$. $P$是素数. $G$中任意不为$e$的元$a$，阶为$n$.\\
+则由定理3有$n/p^m$. 故$n=p^t, t \geq 1$\\
+当$t=1$时，$n=p$,$(a)$是一个阶为$p$的子群.\\
+当$t>1$时，取$b=a^{p^{t-1}}$，有$b^p=a^{p^t}=a^n=e$\\
+易证$b$的阶为$P$，$(b)$是一个阶为$P$的子群.
+
+3.
+解：\\
+设群G的阶为N，则有$m/N,n/N$.\\
+设$ab$的阶是P，则有$P/N$.\\
+由$ab=ba$，则$(ab)^{mn}=a^{mn}b^{mn}=e$.\\
+故$p/mn$.\\
+考察$(ab)^{pn}=a^{pn}b^{pn}=a^{pn}=e$.\\
+故$m/pn$，由于$(m,n)=1$，故$m/p$.\\
+同理有$n/p$得$p=mn$.
+
+4*.
+解：
+设H中两不为e的元素a,b，$a\in H,b \in H$，H是与e等价的元的集合.\\
+故有$a\sim e,b\sim e。a\sim e \Rightarrow a\sim aa^{-1} \Rightarrow e\sim a^{-1} \Rightarrow a^{-1} \in H$.\\
+$b\sim e \Rightarrow a^{-1}ab \sim a^{-1}a \Rightarrow ab\sim a\sim e \Rightarrow ab\sim e \Rightarrow ab\in H.$\\
+故H是一个子群.
+
+5.
+解：\\
+假设G中某元a同时属于2个右陪集$Hb,Hc$,$b \in G,c \in G$.\\
+则$a=h_1b=h_2c$,其中$h_1 \in H, h_2 \in H$.\\
+则有$b=(h_1)^{-1}h_2c$\\
+对$Hb$中的任意元hb有$hb=h(h_1)^{-1}h_2c$,显然$h(h_1)^{-1}h_2 \in H$\\
+故hb是$Hc$中的元,即$Hb \subset Hc$,同理可有$Hc \subset Hb$.\\
+即$Hb=Hc$矛盾，故a至多属于一个右陪集. \\
+显然由于H是子群，势必包含e，则$a=ea \in Ha$.\\
+故a属于1个右陪集.
+
+6*.
+解：\\
+对于一个阶为4的群G而言,其中元的阶只能是l,2.4\\
+若G有一个阶为4的元a，则(a)是一个4阶循环群与模4剩余类加群同构.\\
+若G无阶为4的元，则G有3个阶为2的元,设为$xyz$.\\
+则$G=\{e,x,y,z\}$.显然$xy \in G$.\\
+若$xy=e$.则$xy^2=y=x$，矛盾\\
+若$xy=x$,则$y=e$，矛盾;若$xy=y$,则$x=e$,矛盾\\
+所以$z=xy$，同理有$xy=yx=z \ \ \ \ yz=zy=x \ \ \ xz=zx=y$\\
+上述所有群都与$G=\{e,x,y,z\}$对于运算R的群同构，其中：
+\begin{center}
+	\begin{tabular}{c|cccc}
+		R & e & x & y & z\\
+		\hline
+		e & e & x & y & z\\
+		x & x & e & z & y\\
+		y & y & z & e & x\\
+		z & z & y & x & e\\		
+	\end{tabular} 
+\end{center}
+综上，对于任何一个4阶群，其必与$G$或模4的剩余类加群二者之一同构.
+\section*{\$2.10：不变子群. 商群}
+1.
+解：\\
+不变子群$N$阶为2，设其为$\{e,a\}$\\
+其中有$a=a^{-1},a^2=e$成立，由定理2.\\
+对于$\forall x \in G,$有$xax^{-1} \in \{e,a\}=N$.\\
+若$xax^{-1}=e$,则$xa=x \Rightarrow a=e$不可能\\
+故$xax^{-1}=a$,即$xa=ax$对$\forall x \in G$成立.\\
+显然$G$的中心包含$a,e$.显然故包含$N$
+
+2.
+解：\\
+首先，两个子群的交集一定还是一个子群\\
+令两个子群的交集$N=N_1 \bigcap N_2$\\
+$N$中一元设为$n$,则有$n \in N_1, n \in N_2$\\
+由定理2，有$\forall a \in G,$有$ana^{-1} \in N_1,ana^{-1} \in N_2$\\
+即$ana^{-1} \in N_1 \bigcap N_2 = N \Rightarrow ana^{-1} \in N$对$\forall a \in G$成立.\\
+故$N=N_1 \bigcap N_2$是不变子群
+
+3.
+解：\\
+设N是G的一个指数为2的子群,显然$N \neq G.$\\
+对于G中两元e、b，其中b是任意不为e的元，且$b \bar{\in} N.$\\
+N的两个右陪集为$Ne=N$与$Nb$,两者构成G的一个分类.\\
+同理有两个左陪集$eN=N$与$bN$亦构成C的一个分类.\\
+所以有$Nb=bN$对任意符合要求的b成立\\
+而对于$a\in N$而言,$aN=Na$显然成立，故N是不变子群
+
+4.
+解：\\
+设HN中元为hn，其中$h \in H, n \in N$.\\
+设HN中两元$h_1n_1,h_2n_2,$其中$h_1,h_2 \in H, n_1,n_2 \in N$\\
+则$(h_1n_1)(h_2n_2)^{-1}=(h_1n_1)(n_2^{-1}h_2^{-1})=h_1n_1n_2^{-1}h_2^{-1}=h_1(n_1n_2^{-1})h_2^{-1}=h_1nh_2^{-1}$\\
+显然$n \in N$，所以$nh_2^{-1}$构成的集合同$h_2^{-1}n$\\
+故$h_1nh_2^{-1} \in h_1HN=HN$.\\
+故HN是G的子群.
+
+5.
+解：\\
+$G=S_4,N=\{(1),(12)(34),(13)(24),(14)(23)\}$\\
+$N_1=\{(1)(12)(34)\}$\\
+$N_1$是$N$的一个不变子群（由于$N$是交换群）\\
+但容易找到$ana_1 \bar{\in} N_1$的例子，其中$a \in G, n \in N_1$
+
+6*.
+解：\\
+(i) C显然是个子群\\
+对$\forall a \in G,c \in C, aca^{-1}=(aca^{-1}c^{-1})c \in C$\\
+故C是一个不变子群\\
+(ii)令$a,b \in G$，则有$c=a^{-1}b^{-1}ab \in C$\\
+故有$ab=bae \ \ \ \ \ abcC=bacC=baC$\\
+故有$CabC = CbaC=aCbC=bCaC$\\
+故$a/c$是交换群\\
+(iii)对$\forall a,b \in G$，有$aNbN=bNaN$\\
+即$abNN=baNN \Rightarrow abN=baN$\\
+即有$abe=baN$, $n \in N \Rightarrow ab=ban \Rightarrow a^{-1}b^{-1}ab=n \in N$包含C\\
+故$C \subset N$.
+
+\section*{\$2.11：同态和不变子群}
+1. 
+解：\\
+由于$\phi$是满射，则$\forall \bar{a} \in \bar{S}$，存在$a \in S$使$\phi(a)=\bar{a}$，有$\bar{S} \subset \phi(S)$. 对于$\forall a \in S$，存在$\bar{a} \in \bar{S}$使$\phi(a)=\bar{a}$，有$\phi(S) \subset \bar{S}$，故$\phi(S)=\bar{S}$\\
+反例很容易举出，设$A=\{a,b,c\}$,$\bar{A}=\{c\}$.$\phi: \ \ \ \ \ a\rightarrow c,b \rightarrow c, c \rightarrow c$. \\
+取$S=\{a\}$，则$\bar{S}=\{c\}$.而$\bar{S}$的逆像是$\{a,b,c\} \neq {a} = S$
+
+2. 
+解：\\
+跳过
+
+3. 
+解：\\
+$G$与$\bar{G}$同态$\Rightarrow G/N \cong \bar{G}$. $G/N$的阶为$n$是$N$在$G$的指数显然$n/m$.\\
+若$n/m$，令$G=(a), \bar{G}=(\bar{a})$\\
+$\phi: \ \ \ \ a^k \rightarrow \bar{a}^k$
+若$a^{k_1}=a^{k_2}$,则$m/k_2-k_1 \Rightarrow n/k_2-k_1 \Rightarrow \bar{a}^{k_1}=\bar{a}^{k_2}$故是映射.\\
+显然对$\forall \bar{k} \in \bar{G}$都能找到$\phi^{-1}(\bar{a}^k)=a^k \in G$.\\
+故$\phi$是同态满射，$G$与$G$同态.
+
+4.
+解：\\
+循环群是交换群，故其子群是不变子群，$G/N$存在.\\
+设$G=(a)$，对于$\forall a^k \in G$，存在$N$的陪集$a^kN=(aN)^k$\\
+全体$a^kN$构成$G/N$亦即$(aN)$是循环群.
+\end{document}

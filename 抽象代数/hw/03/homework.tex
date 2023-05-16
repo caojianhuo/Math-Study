@@ -1,0 +1,243 @@
+\documentclass{ctexart}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{indentfirst}
+\usepackage{graphicx}
+\pagestyle{fancy}
+\lfoot{}%这条语句可以让页码出现在下方
+\title{《抽象代数》\\ 第三、四次作业} 
+\author{\\姓名：姜岚曦 \ \ 学号：19375233
+		\\姓名：魏来   \ \ 学号：20374104         
+	    \\姓名：曹建钬 \ \ 学号：20375177
+        \\姓名：李璞   \ \ 学号：20376164
+        \\姓名：刘炅   \ \ 学号：21374261}
+\date{}
+\begin{document}
+\pagestyle{empty}
+\thispagestyle{empty}
+\CTEXsetup[format={\Large\bfseries}]{section}
+\maketitle
+\clearpage	
+	
+\section*{\$2.1：群的定义}
+1. 
+解: \\
+$A = \{$全体整数$\}$\\
+I.两个整数相减还是一个整数 \\
+II.$a-(b-c)=a-b+c\neq (a-b)-c$\\
+故不满足结合律，$A$不是一个群
+
+2. 
+解：\\
+$A=\{0,1\}$，定义运算$R: 01=1\ \ \ \ 10=1 \ \ \ \ 00=0 \ \ \ \ 11=0$\\
+I.$A$对$R$而言是闭的\\
+II.\\ $0(00)=00=0=00=(00)0 \ \ \ \ 1(00)=10=1=10=(10)0$ \\
+$0(01)=01=1=01=(00)1 \ \ \ \ 1(01)=11=0=11=(10)1$ \\
+$0(10)=01=1=10=(01)0 \ \ \ \ 1(10)=11=0=00=(11)0$ \\
+$0(11)=00=0=11=(01)1 \ \ \ \ 1(11)=10=1=01=(11)1$ \\
+说明结合律成立\\
+III.\\
+$1x=0 \Rightarrow x=1 \ \ \ \ y0=0 \Rightarrow y=0$\\
+$0x=1 \Rightarrow x=1 \ \ \ \ y0=1 \Rightarrow y=1$\\
+$0x=0 \Rightarrow x=0 \ \ \ \ y1=0 \Rightarrow y=1$\\
+$1x=1 \Rightarrow x=0 \ \ \ \ y1=1 \Rightarrow y=0$\\
+说明方程$ax=b,ya=b$都在$A$中有解\\
+故$A$符合群的第一定义，是一个群
+
+3. 
+解：\\
+由群的定义III，方程$ax=a$存在群$A$内的一解设为$e$，即$ae=a$\\
+对于$\forall b \in A,ya=b$.存在一解$c$，即$ca=b$.\\
+则对于$\forall b \in A$，有$be=cae=c(ae)=ca=b$成立.故IV'成立\\
+由于$e\in A$，故$ax=e$有解.故V'成立\\
+$a=ae=a(a^{-1}a)=(aa^{-1})a=ea$对$\forall a\in A$成立. \\
+对于方程$ax=b$，取$x=a^{-1}b$，有$a(a^{-1}b)=eb =b$成立.\\
+对于方程$ya=b$，取$y=ba^{-1}$，有$(ba)^{-1}a=b(a^{-1}a)=be=b$成立.\\
+故IV'与V'和III等价，即I、II、IV'、V'可作为群的定义.
+
+\section*{\$2.2：单位元，逆元，消去律}
+1*. 
+解：\\ 
+若对VxeG，有xie成立
+根据定理2,有 x=X对VXGG度立由题设有(ab)(ab)=e 即成立另面,有(ba)(ab)= b(aa)b = beb =hb=C感故(ab)(ab)=(ba)(ab)
+等式两边在乘(ab)有(ab)(ab)(ab)7=(ba)(ab)(ab)即pabe=bae得到a=ba对Va;beC成立.救G是交换群证牛
+
+2. 假定$A$和$\bar{A}$对于代数运算$\circ$和$\bar{\circ}$来说同态，$\bar{A}$和$\bar{\bar{A}}$对于代数运算$\bar{\circ}$和$\bar{\bar{\circ}}$来说同态. 证明，$A$和$\bar{\bar{A}}$对于代数运算$\circ$和$\bar{\bar{\circ}}$来说同态. \\
+证明：\\
+对于$\forall a \in A, \exists \phi_1: \ \ \ \ a \rightarrow \bar{a}, \bar{a} \in \bar{A}.$ \\
+对于$\forall \bar{b} \in \bar{A}, \exists \phi_2: \ \ \ \ \bar{b} \rightarrow \bar{\bar{b}}, \bar{\bar{b}} \in \bar{\bar{A}}.$ \\
+且有 $\forall a,b \in A$，有$\phi_1(a \circ b) = \phi_1 a \ \bar{\circ} \  \phi_1 b$\\
+ $\forall c,d \in \bar{A}$，有$\phi_2(c \ \bar{\circ} \ d) = \phi_2 c \  \bar{\bar{\circ}} \ \phi_2 d$. \\
+令$c = \phi_1 a , d = \phi_1 b$，有$\phi_1 (a \circ b) = c \bar{\circ} d$ \\
+即有$\phi_2(\phi_1(a \circ b)) = \phi_2 (\phi_1 a) \bar{\bar{\circ}} \phi_2(\phi_1 b)$ \\
+定义从$A$到$\bar{\bar{A}}$的映射$\phi_3: \ \ a \rightarrow \phi_2(\phi_1(a))$. \\
+则可知$A$和$\bar{\bar{A}}$对于$\circ$和$\bar{\bar{\circ}}$同态.
+\section*{\$1.9：同构、自同构}
+1. $A=\{a, b, c\}$. 代数运算$\circ$由下表给定 \\
+\begin{center}
+	\begin{tabular}{c|ccc}
+		& a & b & c \\
+		\hline
+		a & c & c & c \\
+		b & c & c & c \\
+		c & c & c & c \\
+	\end{tabular} 
+\end{center}
+找出所有$A$的一一变换，对于代数运算$\circ$来说，这些一一变换是否都是$A$的自同构?\\
+解：\\
+\begin{equation*}
+	\phi_1: \ a \rightarrow b, \ b \rightarrow c, \ c \rightarrow a
+\end{equation*}
+\begin{equation*}
+	\phi_2: \ a \rightarrow a, \ b \rightarrow b, \ c \rightarrow c
+\end{equation*}
+\begin{equation*}
+	\phi_3: \ a \rightarrow a, \ b \rightarrow c, \ c \rightarrow b
+\end{equation*}
+\begin{equation*}
+	\phi_4: \ a \rightarrow b, \ b \rightarrow a, \ c \rightarrow c
+\end{equation*}
+\begin{equation*}
+	\phi_5: \ a \rightarrow c, \ b \rightarrow a, \ c \rightarrow b
+\end{equation*}
+\begin{equation*}
+	\phi_6: \ a \rightarrow c, \ b \rightarrow b, \ c \rightarrow a
+\end{equation*}
+$A$的任意一一变换对于$\circ$而言均是$A$的自同构.
+
+2. $A=\{$所有有理数$\}$. 找一个$A$的对于普通加法来说的自同构(映射$x \leftrightarrow x$除外). \\
+解：\\
+设$\{ \phi_k \}$是$A \rightarrow A$的一系列映射. \\
+考虑映射$\phi_k : \ \  a \rightarrow \bar{a} = ka$，其中$k$是任意不等于1的有理数. \\
+对于$\forall a,b \in A, a \circ b = a + b, \bar{a} = ka, \bar{b} = kb.$\\
+$\phi_k(a \circ b) = k(a+b) = \phi_k(a) \circ \phi_k(b) = ka+kb$ \\
+显然，任何形如$\phi_k$的映射均是一一映射，故都是$A$的自同构.
+
+3*.\\
+解：\\
+假设存在一个一一映射$\phi: \ \ A \rightarrow \bar{A}$. 使得其为$A$到$\bar{A}$的同构映射. \\
+令$a \in A, \phi(a)=\bar{a} \in \bar{A}$. \\
+由同构映射,有$\phi(\frac{a}{2}+\frac{a}{2})=\phi(\frac{a}{2})\cdot \phi(\frac{a}{2})$成立. \\
+即$\phi(a)=\phi^2(\frac{a}{2})$ \\
+由于$\bar{A}$是有理数集的子集，故$\phi^2(\frac{a}{2})>0$，即$\phi(a)>0$对任意$a \in A$成立. \\
+意味着任意$\bar{b}<0$，且$\bar{b} \in \bar{A}$将找不到$\phi^{-1}$对应的$A$中原象，与$\phi$是一一映射矛盾，放$\phi$不存在.
+\section*{\$1.10：等价关系与集合的分类}
+1. $A=\{$所有实数$\}$. $A$的元间的关系$>$以及$\geq$是不是等价关系？ \\
+解：\\
+对于关系$>$，显然不符合反射律，$ \forall a \in A, $不存在$ a>a $.故非等价关系
+\\
+对于关系$\geq$，符合反射律：$ \forall a \in A, $有$a \geq a$成立. 
+不符合对称律：$\forall a,b \in A$且$a \neq b$，$a \geq b$与$b \geq a$只能成立其一.\\
+故非等价关系.\\
+
+2*. \\
+解：\\
+即便满足对称律与推移律.对于$a$而言，假如不存在一个使得$aRb$成立的$b$,就无法得到$aRa$.\\
+反由对称律与推移律的存在无法确保如是的$b$存在.
+
+3. 仿照例3规定整数间的关系：
+\begin{equation*}
+	a \equiv b (-5)
+\end{equation*}
+证明你所规定的是一个等价关系，并且找出模$-5$的剩余类.\\
+证明： \\
+反射律：$a \equiv a(-5)$显然成立. \\
+对称律：$a \equiv b(-5) \Rightarrow b \equiv a(-5)$显然成立. \\
+推移律：$a \equiv b(-5), b \equiv c(-5) \Rightarrow a \equiv c(-5)$，显然成应.\\
+定义$-5$的剩余类$\{0,1,2,3,4\}$
+
+
+\section*{\$2.6：置换群}
+1.解：\\
+$$
+\left (\begin{array}{cccc}
+	1 &2 & 3 \\
+	1 &3 & 2  
+\end{array}\right)
+\left (\begin{array}{cccc}
+	1 &2 & 3 \\
+	2 &1 & 3  
+\end{array}\right)
+\left (\begin{array}{cccc}
+	1 &2 & 3 \\
+	3 &2 & 1  
+\end{array}\right)
+$$
+
+2.解：\\
+$$
+\left (\begin{array}{cccc}
+	1 &2 & 3 \\
+	1 &2 & 3  
+\end{array}\right)=(1) \ \ \ 
+\left (\begin{array}{cccc}
+	1 &2 & 3 \\
+	1 &3 & 2  
+\end{array}\right)=(2\  3) \ \ \ 
+\left (\begin{array}{cccc}
+	1 &2 & 3 \\
+	2 &1 & 3  
+\end{array}\right)=(1 \ 2)
+$$
+$$
+\left (\begin{array}{cccc}
+	1 &2 & 3 \\
+	3 &2 & 1  
+\end{array}\right)=(1 \ 3) \ \ \ 
+\left (\begin{array}{cccc}
+	1 &2 & 3 \\
+	2 &3 & 1  
+\end{array}\right)=(1\ 2 \ 3) \ \ \ 
+\left (\begin{array}{cccc}
+	1 &2 & 3 \\
+	3 &1 & 2  
+\end{array}\right)=(1 \ 3 \ 2)
+$$
+3.解：\\
+(i)\\
+对于不相挥的置换工,t最字Q如果出现在工工中 则只能出现在 2看之-,不妨设为工tb@am=(abbaut -lnj7_Oat=b
+符全交换律;如果不出现在己t中,则飞对a均不发为生改变故 at.azz-a 符合交使津
+(ii)\\
+a;i-1)()(A@=a故(in-)(HH-)=E
+
+4.解：\\
+
+
+5.解：\\
+
+
+
+
+\section*{\$2.7：循环群}
+1.解：\\
+设有循环群$G(a)$\\
+$\forall a^{m_1},a^{m_2} \in G(a)$ \\
+$a^{m_1}a^{m_2}=a^{m_1+m_2}=a^{m_2}a^{m_1}$\\
+故有交换律.
+
+2.解：\\
+$a^n=e$，设$(a^r)^m=e$\\
+$a^{rm}=e \ \ \ \ rm=kn$，$k$为正整数.\\
+显然使$rm=kn$成立的最小$m=\frac{n}{d}$为$a^r$的阶.
+
+3.解：\\
+考虑$a^r$的阶即可，设为$m$，则$(a^r)^m=e$\\
+已知$a^n=e$，故有$rm=kn$，$k$是正整数\\
+由于$rm=o(r)$，故$kn \equiv o(r)$\\
+若$(r,n)=1$，则$k \equiv o(r)$\\
+故$m=\frac{kn}{r}$最小值为$n$，当$k=r$时成立.\\
+即$a^r$的阶为$n$.其生成群与$n$的剩余类加群同构，即与$G$同构，显然$a^r$也生成$G$
+
+4.解：\\
+存在$G$到$\bar{G}$的变换$\phi$满射，设$G=(a)$.\\
+$\phi: \ \ \ \ \ a \rightarrow \bar{a}$\\
+对于$\bar{G}$中$\forall \bar{g}$，$\exists a^m \in G$使得$\phi(a^m)=\bar{g}$.\\
+$\phi(a^m)=(\phi(a))^m=\bar{a}^m=\bar{g}$ \\
+所以$\bar{G}=(\bar{a})$
+
+5.解：\\
+$G$与整数加群同构，整数加群与任意模$n$的剩余类加群同态\\
+模$n$的剩余类加群与$n$阶循环群$\bar{G}$同构(若$\bar{G}$有限阶).故$G$与$\bar{G}$同态.\\
+若$\bar{G}$无限阶，显然有$G$与$\bar{G}$同态(同与整数加群同构)
+
+\end{document}

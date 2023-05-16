@@ -1,0 +1,151 @@
+\documentclass{ctexart}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{indentfirst}
+\usepackage{graphicx}
+\pagestyle{fancy}
+\lfoot{}%这条语句可以让页码出现在下方
+\title{《抽象代数》\\ 第一次作业} 
+\author{\\姓名：姜岚曦 \ \ 学号：19375233
+		\\姓名：魏来   \ \ 学号：20374104         
+	    \\姓名：曹建钬 \ \ 学号：20375177
+        \\姓名：李璞   \ \ 学号：20376164
+        \\姓名：刘炅   \ \ 学号：21374261}
+\date{}
+\begin{document}
+\pagestyle{empty}
+\thispagestyle{empty}
+\CTEXsetup[format={\Large\bfseries}]{section}
+\maketitle
+\clearpage	
+	
+\section*{\$1.2：映射}
+1. $A = \{1,2,3, \cdots, 100\}$. 找一个$A × A$到$A$的映射. \\
+解: \\
+定义 $\phi: \ \ \ \ \ (a_1,a_2) \longrightarrow \lfloor\frac{1}{2}(a_1+a_2)\rfloor=\phi(a_1,a_2)$
+为$A×A$到$A$的一个映射 \\
+其中$\lfloor\frac{1}{2}(a_1+a_2)\rfloor$表示不超过$\frac{1}{2}(a_1+a_2)$的最大整数
+
+2. 在你为习题$1$所找到的映射之下，是不是$A$的每一个元都是$A×A$的一个元的象? \\
+解：\\
+是，对于$\forall x \in A, \exists (a_1,a_2)=(x,x), s.t. \phi(x,x)=x$
+\section*{\$1.3：代数运算}
+1. $A=\{ $所有不等于零的偶数$\}$. 找一个集合$D$，使得普通除法是$A×A$到$D$的代数运算，是不是找得到一个以上的这样的$D$? \\
+解：\\ 可以找到一个以上这样的$D$ \\
+令$D_0=Q$，即有理数的全体构成的集合 \\
+那么包含$D_0$的任意集合都是符合要求的$D$，故$D$肯定不止一个
+
+2. $A= \{a,b,c\}$. 规定$A$的两个不同的代数运算. \\
+解：\\
+$R_1$和$R_2$都是$A= \{a,b,c\}$的代数运算：\\
+$R_1:$\begin{center}
+	\begin{tabular}{c|ccc}
+		& a & b & c \\
+		\hline
+		a & a & b & c \\
+		b & a & b & c \\
+		c & a & b & c \\
+	\end{tabular} 
+\end{center}
+$R_2:$\begin{center}
+	\begin{tabular}{c|ccc}
+		& a & b & c \\
+		\hline
+		a & b & b & b \\
+		b & b & b & b \\
+		c & b & b & b \\
+	\end{tabular} 
+\end{center}
+\section*{\$1.4：结合律}
+1. $A=\{$所有不等于零的实数$\}$. $\circ$是普通除法：$a \circ b = \frac{a}{b}$. 这个代数运算适合不适合结合律? \\
+解：\\
+考虑：
+\begin{equation*}
+	(a \circ b)\circ c = \frac{a}{b} \circ c = \frac{a}{bc} 
+\end{equation*}
+\begin{equation*}
+	a \circ (b \circ c) = a \circ \frac{b}{c} = \frac{ac}{b} 
+\end{equation*}
+由于$a,b,c \in A=\{x | x \in R,x \neq 0\}$任意性，一般没有$\frac{a}{bc}=\frac{ac}{b}$，即
+$(a \circ b)\circ c=a \circ (b \circ c)$未必成立，故代数运算$\circ$不适合结合律 
+
+2. $A=\{$所有实数$\}$. \\
+\begin{equation*}
+	\circ: \ \ \ \ \ \ (a,b) \rightarrow a+2b = a \circ b
+\end{equation*}
+\noindent
+这个代数运算适合不适合结合律？\\
+解：\\
+\begin{equation*}
+	(a \circ b)\circ c = (a+2b) \circ c = a+2b+2c 
+\end{equation*}
+\begin{equation*}
+	a \circ (b \circ c) = a \circ (b+2c) = a+2b+4c 
+\end{equation*}
+由于$a,b,c \in A=\{$所有实数$\}$任意性，代数运算$\circ$不适合结合律
+
+3. $A=\{a,b,c\}$. 由表：\\
+\begin{center}
+\begin{tabular}{c|ccc}
+	  & a & b & c \\
+	\hline
+	a & a & b & c \\
+	b & b & c & a \\
+	c & c & a & b \\
+\end{tabular} 
+\end{center}
+所给的代数运算适合不适合结合律？\\
+解： \\
+\begin{equation*}
+	a \circ b \circ c = a 
+\end{equation*}
+\begin{equation*}
+	a \circ (b \circ c) = a \circ a = a
+\end{equation*}
+依次替换$3^3=27$次进行验证可证得此代数运算适合结合律
+\section*{\$1.5：交换律}
+1. $A=\{$所有实数$\}$. $\circ$是普通减法：$a \circ b = a-b$. 这个代数运算适合不适合交换律? \\
+解：\\
+\begin{equation*}
+	a \circ b  = a - b
+\end{equation*}
+\begin{equation*}
+	b \circ a = b - a
+\end{equation*}
+显然，此代数运算不适合交换律
+
+2. $A=\{a,b,c,d\}$. 由表：\\
+\begin{center}
+	\begin{tabular}{c|cccc}
+		& a & b & c & d\\
+		\hline
+		a & a & b & c & d\\
+		b & b & d & a & c\\
+		c & c & a & b & d\\
+		d & d & c & a & b\\
+	\end{tabular} 
+\end{center}
+所给的代数运算适合不适合交换律？\\
+解： \\
+若代数运算是符合交换律的，则其运算应为对称阵\\
+可见 $c \circ d = d \neq a = d \circ c$，故不适合交换律
+
+\section*{\$1.6：分配率}
+1. 假定$\bigodot$，$\bigoplus$是$A$的两个代数运算，并且$\bigoplus$适合结合律，$\bigodot$，$\bigoplus$适合两个分配率. 证明
+\begin{align*}
+	 (a_1 \odot b_1)\oplus(a_1 \odot b_2)\oplus(a_2 \odot b_1)\oplus(a_2 \odot b_2) \\
+	= (a_1 \odot b_1)\oplus(a_2 \odot b_1)\oplus(a_1 \odot b_2)\oplus(a_2 \odot b_2)
+\end{align*}
+证明：
+\begin{align*}
+	(a_1 \odot b_1)\oplus(a_1 \odot b_2)\oplus(a_2 \odot b_1)\oplus(a_2 \odot b_2) \\
+	= (a_1 \odot (b_1 \oplus b_2)) \oplus (a_2 \odot (b_1 \oplus b_2)) \\
+	= (a_1 \oplus a_2) \odot (b_1 \oplus b_2)
+\end{align*}
+\begin{align*}
+	(a_1 \odot b_1)\oplus(a_2 \odot b_1)\oplus(a_1 \odot b_2)\oplus(a_2 \odot b_2) \\
+	= ((a_1 \oplus a_2) \odot b_1) \oplus ((a_1 \oplus a_2) \odot b_2) \\
+	= (a_1 \oplus a_2) \odot (b_1 \oplus b_2)
+\end{align*}
+两式相等，原命题得证。
+\end{document}

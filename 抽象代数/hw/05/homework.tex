@@ -1,0 +1,193 @@
+\documentclass{ctexart}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{indentfirst}
+\usepackage{graphicx}
+\pagestyle{fancy}
+\lfoot{}%这条语句可以让页码出现在下方
+\title{《抽象代数》\\ 第六次作业} 
+\author{\\姓名：姜岚曦 \ \ 学号：19375233
+		\\姓名：魏来   \ \ 学号：20374104         
+	    \\姓名：曹建钬 \ \ 学号：20375177
+        \\姓名：李璞   \ \ 学号：20376164
+        \\姓名：刘炅   \ \ 学号：21374261}
+\date{}
+\begin{document}
+\pagestyle{empty}
+\thispagestyle{empty}
+\CTEXsetup[format={\Large\bfseries}]{section}
+\maketitle
+\clearpage	
+	
+\section*{\$3.1：加群、环的定义}
+1.
+解：\\
+由第二章\$.8子群定理1知子群充要条件：一个群G不空子集H是子群$\Leftrightarrow 1)a,b \in H \Rightarrow ab \in H \ \ \ \ 2) a\in H \Rightarrow a^{-1} \in H$ \\
+与加群与其非空子集间的关系一致，故充分必要.
+
+2.
+解：\\
+$R=\{0,a,b,c\}$.
+首先验证交换性，由$"+"$的运算表，其沿主对角线对称，知其有交换性.\\
+易验证其结合律等群的性质，$R$对$"+"$作成一个交换群.\\
+易验证$R$对$"×"$有结合律.
+\begin{center}
+	\begin{tabular}{ccccc}
+		x & y & z & x(y+z) & xy+xz\\
+		0 & a & a & 0 & 0\\
+		0 & a & b & 0 & 0\\
+		a & a & a & 0 & 0\\
+		a & a & b & 0 & 0\\
+		c & c & b & a & a\\				
+	\end{tabular} 
+\end{center}
+上表只给出部分验证，但遍历$x,y,z \in R$的任意取值组合可知有.
+\begin{equation*}
+	x(y+z)=xy+xz
+\end{equation*}
+\begin{equation*}
+	(y+z)x=yx+zx
+\end{equation*}
+成立，即R对$"×"$和$"+"$满足分配率.
+由环的定义，知R作为一个环.
+
+
+\section*{\$3.2：交换律、单位元、零因子、整环}
+1.
+解：\\
+$(a+b)^n=a^n+C_n^1a^{n-1}b+\ldots+b^n$. \\
+数学归纳法：$n=1$时，$a+b=a+b$成立. \\
+假设$n=k$时成立$(a+b)^k=a^k+C_k^1a^{k-1}b+\ldots+b^k$. \\
+则$n=k+1$时，$(a+b)=a^{k+1}+C_k^1a^kb+\ldots+ab^k+a^kb+C_k^1a^{k-1}b^2+\ldots+b^{k+1}=a^{k+1}+C_{k+1}^1a^kb+\ldots+b^{k+1}$\\
+故原式成立.
+
+2.
+解：\\
+设R作为加群时是(a).\\
+对于R中任意两元xy.有$x=ma,y=ha$，m,n是整数.\\
+$xy =(ma)(na) = mna^2 =(na)(ma) =yx$ \\
+故R是交换环.
+
+3.
+解：\\
+$(a+b)(1+1)=(a+b)1+(a+b)1=a+b+a+b$\\
+$(a+b)(1+1)=a(1+1)+b(1+1)=a+a+b+b$\\
+由消去律$b+a=a+b$得知符合交换律.
+
+4.
+解：\\
+$R=\{0,1\}$
+\begin{center}
+	\begin{tabular}{c|cc}
+		+ & 0 & 1 \\
+		\hline
+		0 & 0 & 1 \\
+		1 & 1 & 0 \\		
+	\end{tabular} 
+\end{center}
+\begin{center}
+	\begin{tabular}{c|cc}
+		x & 0 & 1 \\
+		\hline
+		0 & 0 & 0 \\
+		1 & 0 & 0 \\		
+	\end{tabular} 
+\end{center}
+R是一个环，1是零因子
+
+5.
+解：\\
+$(a+b\sqrt{2})(c+d\sqrt{2})=(ac+2bd)+(ad+bc)\sqrt{2}$\\
+对于运算$"x"$”来说闭.分配率，$"x"$结合律显然成立.\\
+故首先$\{a+b\sqrt{2}\}$是一个环.\\
+(1).$(a+b\sqrt{2})(c+d\sqrt{2})=(ac+2bd)+(ad+bc)\sqrt{2}=(c+d\sqrt{2})(a+b\sqrt{2})$符合交换律    \\
+(2).$|(a+b\sqrt{2})=(a+b\sqrt{2})|=a+b\sqrt{2}$有单位元1     \\
+(3).$(a+b\sqrt{2})(c+d\sqrt{2})=0 \Rightarrow a=b=0$或$c=d=0$没有零因子     \\
+故该环是一个整环
+\section*{\$3.3：除环、域}
+1.
+解：\\
+F是交换环，因为普通乘法符合交换律\\
+显然F包含一个非零元\\
+F有一个单位元1)\\
+对干$\forall a+bi \in F,a,b$不同时为0.
+$\exists c+di \in F,s.t. (a+bi)(c+di)=1$ \\
+$c+di=\frac{1}{a+bi}=\frac{a-bi}{a^2+b^2}$ \\
+$c=\frac{a}{a^2+b^2} \ \ \ \ \ d=-\frac{b}{a^2+b^2}$\\
+即F的任意非零元存在一个逆元. \\
+故F对普通加法和乘法构成一个域. 
+
+2.
+解：\\
+F是交换环. \\
+F存在非零元,F有单位元1. \\
+对于$\forall a+b\sqrt{3} \in F,a,b$不同时为0. \\
+$\exists c+d\sqrt{3} \in F,s.t. (a+b\sqrt{3})(c+d\sqrt{3})=1$ \\
+$c+d\sqrt{3}=\frac{1}{a+b\sqrt{3}}=\frac{a-b\sqrt{3}}{a^2-3b^2}$ \\
+故$c=\frac{a}{a^2-3b^2} \ \ \ \ \ d=-\frac{b}{a^2-3b^2}$\\
+故F内任意非零元存在一个逆元，故F作成一个域.
+
+3.
+解：\\
+R至少包含1个非零元，考虑由R中非零元构成的集合R*.\\
+k*中无零元,R中无零因子,故R*对乘法来说闭.\\
+R是一个环,乘法满足结合率,同样适合R*. \\
+由于R无零因子,故R*满足消去率.\\
+由有限群定义 知R*是个乘群.\\
+故R*存在一个单位元1.其也是R的单位元.\\
+R*中的元均有一个逆元,即R中非零元均有逆元.\\
+故R作成一个除环.	
+
+4.
+解：\\
+对于$\forall(\alpha_1,\beta_1),(\alpha_2,\beta_2),(\alpha_3,\beta_3) \in R$.有：
+\begin{eqnarray*}    \label{eq}
+	[(\alpha_1,\beta_1)(\alpha_2,\beta_2)](\alpha_3,\beta_3)&=&(\alpha_1\alpha_2-\beta_1\bar{\beta_2},\alpha_1\beta_2+\beta_1\bar{\alpha_2})(\alpha_3,\beta_3)  \nonumber    \\
+	~&=&((\alpha_1\alpha_2-\beta_1\bar{\beta_2})\alpha_3-(\alpha_1\beta_2+\beta_1\bar{\alpha_2})\bar{\alpha_3},(\alpha_1\alpha_2-\beta_1\bar{\beta_2})\beta_3+(\alpha_1\beta_2+\beta_1\bar{\alpha_2})\bar{\alpha_3})
+\end{eqnarray*}
+而
+\begin{eqnarray*}    \label{eq}
+	(\alpha_1,\beta_1)[(\alpha_2,\beta_2)(\alpha_3,\beta_3)]&=&(\alpha_1,\beta_1)(\alpha_2\alpha_3-\beta_2\bar{\beta_3},\alpha_2\beta_3+\beta_2\bar{\alpha_3}) \nonumber    \\
+	~&=&(\alpha_1(\alpha_2\alpha_3-\beta_2\bar{\beta_3})-\beta_1\overline{(\alpha_2\beta_3+\beta_2\bar{\alpha_3})} ,\alpha_1(\alpha_2\beta_3+\beta_2\bar{\alpha_3})+\beta_1\overline{(\alpha_2\alpha_3-\beta_2\bar{\beta_3})} )             \nonumber  \\
+	~&=&((\alpha_1\alpha_2-\beta_1\bar{\beta_2})\alpha_3-(\alpha_1\beta_2+\beta_1\bar{\alpha_2})\bar{\beta_3} ,(\alpha_1\alpha_2-\beta_1\bar{\beta_2})\beta_3+(\alpha_1\beta_2+\beta_1\bar{\alpha_2})\bar{\alpha_3})
+\end{eqnarray*}
+故有$[(\alpha_1,\beta_1)(\alpha_2,\beta_2)](\alpha_3,\beta_3)=(\alpha_1,\beta_1)[(\alpha_2,\beta_2)(\alpha_3,\beta_3)]$成立
+
+5.
+解：\\
+$(a,0)+(b,0)(i,0)+(c,0)(0,1)+(d,0)(0,i)=(a,0)+(bi,0)+(0,c)+(0,di)=(a+bi,c+di)$\\
+故四元数可写成该形式
+\section*{\$3.4：无零因子环的特征}
+1. 
+解：\\
+F中无零因子，且有四个元；F作成加群的阶为4.而其特征是其因数.\\
+a)F的特征必为素数，4的质因子只有2.故F特征为2. \\
+b)F中的非零元F*构成一个乘群，阶为3，故为一生成群(a).其中元为$F^*=\{1,a,a^2\}$.\\
+故有$a^2+1=a=a^4=(a^2)^2 \ \ \ \ \ \ a+1=a^2$成立.
+
+2*. 
+解：\\
+设$b=kn+a \ \ \ \ \ kn=b-a \ \ \ \ \ n/b-a$\\
+若$(b,n) \neq 1$，设$(b,n)=p>1$ \\
+则$b/p=kn/p+a/p$成立. $\Rightarrow p/a$，故$(a,n)=p$矛盾，故b与n也互质.
+
+3*. 
+解：\\
+显然乘法对剩余类符合结合律.\\
+如果$[a]\in G,[b]\in G$.显然ab也与n互素,$[ab] \in G$.故闭. \\
+由于$(1,n)=1,[1] \in G$，是G的单位元\\
+由裴蜀定理，设$[a] \in G,(a,n)=1 \Leftrightarrow \exists$整数$x,y,s.t. ax+ny=1$ \\
+$[a][x]+[n][y]=[1]$，而$[n]=0$ \\
+故$[a][x]=[1]$.故$\forall [a] \in G$存在逆元.\\
+故G作成一个群.
+
+4*.
+解：\\
+G的阶是$\phi(n)$,$[a] \in G$,$[a]$的阶是$\phi(n)$的因数.\\
+故$[a]^{\phi(n)}=[a^{\phi(n)}]=[1]$.\\
+故有$a^{\phi(n)} \equiv 1(mod n)$得证.
+
+
+
+
+\end{document}

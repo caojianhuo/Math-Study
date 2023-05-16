@@ -1,0 +1,159 @@
+\documentclass{ctexart}
+\usepackage{fancyhdr}
+\usepackage{amsmath}
+\usepackage{indentfirst}
+\usepackage{graphicx}
+\pagestyle{fancy}
+\lfoot{}%这条语句可以让页码出现在下方
+\title{《抽象代数》\\ 第二次作业} 
+\author{\\姓名：姜岚曦 \ \ 学号：19375233
+		\\姓名：魏来   \ \ 学号：20374104         
+	    \\姓名：曹建钬 \ \ 学号：20375177
+        \\姓名：李璞   \ \ 学号：20376164
+        \\姓名：刘炅   \ \ 学号：21374261}
+\date{}
+\begin{document}
+\pagestyle{empty}
+\thispagestyle{empty}
+\CTEXsetup[format={\Large\bfseries}]{section}
+\maketitle
+\clearpage	
+	
+\section*{\$1.7：一一映射、变换}
+1. $A = \{$所有$>0$的数$\}$，$\bar{A}$ = $\{$所有实数$\}$. 找一个$A$与$\bar{A}$间的一一映射.\\
+解: \\
+定义 $\phi: \ \ \ \ \ a \leftrightarrow \lg{a}$
+是满足要求的一一映射 \\
+对于$\forall a \in A, \exists \bar{a} = \lg a,$且$\bar{a} \in \bar{A}$. \\
+对于$\forall \bar{b} \in \bar{A}, \exists b = e^{\bar{b}} \in A$.\\
+故$\phi$既为单射，亦为满射，即一一映射.
+
+2. $A = \{$所有$\geq0$的数$\}$，$\bar{A}$ = $\{$所有实数$\bar{a}, 0 \leq \bar{a} \leq 1\}$. 找一个$A$到$\bar{A}$的满射. \\
+解：\\
+$\phi: \ \ \ \ \ a \rightarrow |\sin a|$ \\
+对于$\forall \bar{a} \in \bar{A}, \exists a = |\arcsin \bar{a}| \in A.$ \\
+故$\phi$是一个$A$到$\bar{A}$的满射.
+
+3. 假定$\phi$是$A$与$\bar{A}$间的一个一一映射，$a$是$A$的一个元.
+\begin{equation*}
+	\phi^{-1}[\phi(a)] = ? \ \ \phi[\phi^{-1}(a)] = ?
+\end{equation*}
+若$\phi$是$A$的一个一一变换，这两个问题的回答又该是什么? \\
+解：\\
+\begin{itemize}
+	\item 若$\phi$是$A$与$\bar{A}$间的一个一一映射，$\phi^{-1}[\phi(a)] = a$，但$a$不一定是$\bar{A}$中的元素，$\phi[\phi^{-1}(a)]$未必有意义，除非$\bar{A}=A$.
+	\item 若$\phi$是$A$的一个一一变换，则$	\phi^{-1}[\phi(a)] = a $，亦有$\phi[\phi^{-1}(a)] = a$
+\end{itemize}
+
+\section*{\$1.8：同态}
+1. $A=\{ $所有实数$x\}$. $A$的代数运算是普通乘法. 以下映射是不是$A$到$A$的一个子集$\bar{A}$的同态满射? 
+\begin{equation*}
+	a)\  x \rightarrow |x| \ \ 
+	b)\  x \rightarrow 2x  \ \ 
+	c)\  x \rightarrow x^2 \ \ 
+	d)\  x \rightarrow -x  \ \ 
+\end{equation*}
+解：\\ 
+\begin{itemize}
+	\item[$a)$] $x \rightarrow |x|$ \\
+	首先对$\forall \bar{a} = |a| \in \bar{A}, \exists a = -\bar{a}$或$\bar{a}\in A$. 即$a)$是一个满射. \\
+	对于$\forall a,b \in A, \bar{a} = |a|, \bar{b} = |b|$.\\ $a \circ b = ab, \bar{a} \circ \bar{b} = \bar{a}\bar{b} = |a| \cdot |b| = |ab| = \phi(a \circ b)$. 故有$a \circ b \rightarrow \bar{a} \circ \bar{b}$ \\
+	故$a)$是同态满射
+	\item[$b)$] $x \rightarrow 2x$ \\
+	显然$b)$也是一个满射. \\
+	对于$\forall a,b \in A, \bar{a} = 2a, \bar{b} = 2b$.\\ $a \circ b = ab, \bar{a} \circ \bar{b} = 2a \cdot 2b = 4ab \neq \phi(a \circ b)=2ab$. 式中不等号在$ab \neq 0$时始终成立. \\
+	故$b)$不是同态满射	
+	\item[$c)$] $x \rightarrow x^2$ \\
+	显然对$\forall \bar{a} \in \bar{A}, \exists a = \sqrt{\bar{a}} \in A$. 即$c)$是一个满射. \\
+	对于$\forall a,b \in A, \bar{a} = a^2, \bar{b} = b^2$.\\ $a \circ b = ab, \bar{a} \circ \bar{b} = a^2b^2 = \phi(a \circ b) = a^2b^2$. \\
+	故$a)$是同态满射
+	\item[$d)$] $x \rightarrow -x$  \\
+	显然$d)$是一个满射. \\
+	对于$\forall a,b \in A, \bar{a} = -a, \bar{b} = -b$.\\ $a \circ b = ab, \bar{a} \circ \bar{b} = ab \neq \phi(a \circ b) = -ab$.在$ab \neq 0$时成立. \\
+	故$d)$不是同态满射
+\end{itemize}
+
+2. 假定$A$和$\bar{A}$对于代数运算$\circ$和$\bar{\circ}$来说同态，$\bar{A}$和$\bar{\bar{A}}$对于代数运算$\bar{\circ}$和$\bar{\bar{\circ}}$来说同态. 证明，$A$和$\bar{\bar{A}}$对于代数运算$\circ$和$\bar{\bar{\circ}}$来说同态. \\
+证明：\\
+对于$\forall a \in A, \exists \phi_1: \ \ \ \ a \rightarrow \bar{a}, \bar{a} \in \bar{A}.$ \\
+对于$\forall \bar{b} \in \bar{A}, \exists \phi_2: \ \ \ \ \bar{b} \rightarrow \bar{\bar{b}}, \bar{\bar{b}} \in \bar{\bar{A}}.$ \\
+且有 $\forall a,b \in A$，有$\phi_1(a \circ b) = \phi_1 a \ \bar{\circ} \  \phi_1 b$\\
+ $\forall c,d \in \bar{A}$，有$\phi_2(c \ \bar{\circ} \ d) = \phi_2 c \  \bar{\bar{\circ}} \ \phi_2 d$. \\
+令$c = \phi_1 a , d = \phi_1 b$，有$\phi_1 (a \circ b) = c \bar{\circ} d$ \\
+即有$\phi_2(\phi_1(a \circ b)) = \phi_2 (\phi_1 a) \bar{\bar{\circ}} \phi_2(\phi_1 b)$ \\
+定义从$A$到$\bar{\bar{A}}$的映射$\phi_3: \ \ a \rightarrow \phi_2(\phi_1(a))$. \\
+则可知$A$和$\bar{\bar{A}}$对于$\circ$和$\bar{\bar{\circ}}$同态.
+\section*{\$1.9：同构、自同构}
+1. $A=\{a, b, c\}$. 代数运算$\circ$由下表给定 \\
+\begin{center}
+	\begin{tabular}{c|ccc}
+		& a & b & c \\
+		\hline
+		a & c & c & c \\
+		b & c & c & c \\
+		c & c & c & c \\
+	\end{tabular} 
+\end{center}
+找出所有$A$的一一变换，对于代数运算$\circ$来说，这些一一变换是否都是$A$的自同构?\\
+解：\\
+\begin{equation*}
+	\phi_1: \ a \rightarrow b, \ b \rightarrow c, \ c \rightarrow a
+\end{equation*}
+\begin{equation*}
+	\phi_2: \ a \rightarrow a, \ b \rightarrow b, \ c \rightarrow c
+\end{equation*}
+\begin{equation*}
+	\phi_3: \ a \rightarrow a, \ b \rightarrow c, \ c \rightarrow b
+\end{equation*}
+\begin{equation*}
+	\phi_4: \ a \rightarrow b, \ b \rightarrow a, \ c \rightarrow c
+\end{equation*}
+\begin{equation*}
+	\phi_5: \ a \rightarrow c, \ b \rightarrow a, \ c \rightarrow b
+\end{equation*}
+\begin{equation*}
+	\phi_6: \ a \rightarrow c, \ b \rightarrow b, \ c \rightarrow a
+\end{equation*}
+$A$的任意一一变换对于$\circ$而言均是$A$的自同构.
+
+2. $A=\{$所有有理数$\}$. 找一个$A$的对于普通加法来说的自同构(映射$x \leftrightarrow x$除外). \\
+解：\\
+设$\{ \phi_k \}$是$A \rightarrow A$的一系列映射. \\
+考虑映射$\phi_k : \ \  a \rightarrow \bar{a} = ka$，其中$k$是任意不等于1的有理数. \\
+对于$\forall a,b \in A, a \circ b = a + b, \bar{a} = ka, \bar{b} = kb.$\\
+$\phi_k(a \circ b) = k(a+b) = \phi_k(a) \circ \phi_k(b) = ka+kb$ \\
+显然，任何形如$\phi_k$的映射均是一一映射，故都是$A$的自同构.
+
+3*.\\
+解：\\
+假设存在一个一一映射$\phi: \ \ A \rightarrow \bar{A}$. 使得其为$A$到$\bar{A}$的同构映射. \\
+令$a \in A, \phi(a)=\bar{a} \in \bar{A}$. \\
+由同构映射,有$\phi(\frac{a}{2}+\frac{a}{2})=\phi(\frac{a}{2})\cdot \phi(\frac{a}{2})$成立. \\
+即$\phi(a)=\phi^2(\frac{a}{2})$ \\
+由于$\bar{A}$是有理数集的子集，故$\phi^2(\frac{a}{2})>0$，即$\phi(a)>0$对任意$a \in A$成立. \\
+意味着任意$\bar{b}<0$，且$\bar{b} \in \bar{A}$将找不到$\phi^{-1}$对应的$A$中原象，与$\phi$是一一映射矛盾，放$\phi$不存在.
+\section*{\$1.10：等价关系与集合的分类}
+1. $A=\{$所有实数$\}$. $A$的元间的关系$>$以及$\geq$是不是等价关系？ \\
+解：\\
+对于关系$>$，显然不符合反射律，$ \forall a \in A, $不存在$ a>a $.故非等价关系
+\\
+对于关系$\geq$，符合反射律：$ \forall a \in A, $有$a \geq a$成立. 
+不符合对称律：$\forall a,b \in A$且$a \neq b$，$a \geq b$与$b \geq a$只能成立其一.\\
+故非等价关系.\\
+
+2*. \\
+解：\\
+即便满足对称律与推移律.对于$a$而言，假如不存在一个使得$aRb$成立的$b$,就无法得到$aRa$.\\
+反由对称律与推移律的存在无法确保如是的$b$存在.
+
+3. 仿照例3规定整数间的关系：
+\begin{equation*}
+	a \equiv b (-5)
+\end{equation*}
+证明你所规定的是一个等价关系，并且找出模$-5$的剩余类.\\
+证明： \\
+反射律：$a \equiv a(-5)$显然成立. \\
+对称律：$a \equiv b(-5) \Rightarrow b \equiv a(-5)$显然成立. \\
+推移律：$a \equiv b(-5), b \equiv c(-5) \Rightarrow a \equiv c(-5)$，显然成应.\\
+定义$-5$的剩余类$\{0,1,2,3,4\}$
+\end{document}
